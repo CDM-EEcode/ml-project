@@ -399,4 +399,9 @@ def ShallowConvNet(nb_classes, Chans = 64, Samples = 128, dropoutRate = 0.5):
     
     return Model(inputs=input_main, outputs=softmax)
 
+if __name__ == '__main__':
+    model = EEGNet(nb_classes=2, Chans=64, Samples=128,
+                   dropoutRate=0.5, kernLength=64, F1=8, D=2, F2=16,
+                   norm_rate=0.25, dropoutType='Dropout')
+    model.summary()
 
